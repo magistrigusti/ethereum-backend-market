@@ -123,7 +123,7 @@ describe('Escrow', () => {
 
     describe("Sale", async () => {
         beforeEach(async () => {
-            let transaction = await escrow.connect(buyer).depositEarcnest(1, {value: tokens(5)});
+            let transaction = await escrow.connect(buyer).depositEarnest(1, {value: tokens(5)});
             await transaction.wait();
 
             transaction = await escrow.connect(inspector).updateInspectionStatus(1, true);
@@ -132,7 +132,7 @@ describe('Escrow', () => {
             transaction = await escrow.connect(buyer).approveSale(1);
             await transaction.wait();
 
-            transaction = await escrow.connect(seller).appoveSale(1);
+            transaction = await escrow.connect(seller).approveSale(1);
             await transaction.wait();
 
             transaction = await escrow.connect(lender).approveSale(1);
@@ -144,8 +144,13 @@ describe('Escrow', () => {
             await transaction.wait();
         });
 
-        it("works", async () => {
+        it("Update ownership", async () => {
+            expect(await realEstate.ownerOf(1))
+            .to.be.equal(buyer.address);
+        });
 
+        it("Updates balances", async () => {
+            expect(await escrow.getBalance()).to.be.equal(0);
         });
     });
 });
