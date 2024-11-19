@@ -36,11 +36,11 @@ nav {
   justify-content: center;
   align-items: center;
 
-  padding: 20px;
+  padding:10px 20px;
 }
 
 .nav__brand img {
-  max-width: 125px;
+  max-width: 325px;
   height: auto;
 }
 
@@ -98,7 +98,7 @@ nav {
 /* -- HEADER -- */
 
 header {
-  background-image: url("./assets/houses.png");
+  background-image: url("./images/theater-amazonas-manaus.webp");
   background-position: center;
   background-size: cover;
   min-height: 40vh;

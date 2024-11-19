@@ -1,5 +1,9 @@
 const hre = require("hardhat");
 
+// const tokens = (n) => {
+//   return ethers.utils.parseUnits(n.toString(), "ether");
+// }
+
 async function main() {
   const [buyer, seller, inspector, lender] = await hre.ethers.getSigners();
 

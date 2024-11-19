@@ -1,7 +1,7 @@
 import { ethers } from 'ethers';
 import { useEffect, useState } from 'react';
 
-import close from '../assets/close.svg';
+import close from '../images/logo/logo.png';
 
 const Home = ({ home, provider, escrow, togglePop }) => {
 
